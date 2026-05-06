@@ -1,92 +1,85 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Mail, Phone, Briefcase, GraduationCap, Cpu } from "lucide-react";
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedro Felipe | Portfólio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #050505; color: white; }
+    .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+    header { padding: 100px 0; }
+    h1 { font-size: 4rem; color: white; }
+    h2 { color: #a855f7; margin-top: 10px; }
+    p { color: #cfcfcf; line-height: 1.7; margin-top: 20px; }
+    .card {
+      background: #111;
+      border: 1px solid #6b21a8;
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(168,85,247,0.1);
+    }
+    ul { margin-top: 15px; padding-left: 20px; }
+    li { margin-bottom: 10px; color: #ddd; }
+    .links a {
+      color: #c084fc;
+      text-decoration: none;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span style="color:#a855f7; letter-spacing:3px;">PORTFÓLIO PROFISSIONAL</span>
+      <h1>Pedro Felipe</h1>
+      <h2>Tecnologia • Suporte Técnico • Infraestrutura • Desenvolvimento</h2>
+      <p>
+        Olá, meu nome é Pedro Felipe e sou apaixonado por tecnologia, inovação e aprendizado constante.
+        Minha trajetória profissional é construída com base em dedicação, responsabilidade e interesse em evoluir
+        cada vez mais dentro da área de tecnologia da informação.
+      </p>
+    </header>
 
-export default function PortfolioPedro() {
-  return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(139,92,246,0.18),transparent_35%)]" />
+    <section class="card">
+      <h2>Experiência</h2>
+      <ul>
+        <li>2026 - Global Informática | Consultor Comercial</li>
+        <li>2025 - Missão Salesiana | Instrutor</li>
+        <li>2024 - FUNLEC | Monitor de Informática</li>
+        <li>2024 - Via Certa | Instrutor de Informática</li>
+      </ul>
+    </section>
 
-      <section className="relative px-8 md:px-20 py-24 border-b border-purple-900/30">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto"
-        >
-          <p className="text-purple-400 uppercase tracking-[0.3em] text-sm mb-4">Portfolio Profissional</p>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Pedro Felipe
-          </h1>
-          <h2 className="text-xl md:text-2xl text-zinc-300 mt-4">
-            Tecnologia • Suporte Técnico • Infraestrutura • Desenvolvimento
-          </h2>
-          <p className="mt-8 text-zinc-400 text-lg max-w-3xl leading-8">
-            Olá, meu nome é Pedro Felipe e sou apaixonado por tecnologia, inovação e aprendizado constante.
-            Minha trajetória profissional é construída com base em dedicação, responsabilidade e interesse em evoluir cada vez mais dentro da área de tecnologia da informação.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-8">
-            <Button className="bg-purple-600 hover:bg-purple-700 rounded-2xl">Entrar em contato</Button>
-            <Button variant="outline" className="rounded-2xl border-purple-500 text-purple-300">Baixar currículo</Button>
-          </div>
-        </motion.div>
-      </section>
+    <section class="card">
+      <h2>Formação</h2>
+      <ul>
+        <li>Técnico em Eletrotécnica - IFMS</li>
+        <li>Matemática - UFMS</li>
+        <li>Cursos em Python, Power BI, Hardware e Software</li>
+      </ul>
+    </section>
 
-      <section className="px-8 md:px-20 py-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2"><Briefcase /> Experiência</h3>
-            <ul className="space-y-4 text-zinc-300">
-              <li>2026 - Global Informática | Consultor Comercial</li>
-              <li>2025 - Missão Salesiana | Instrutor</li>
-              <li>2024 - FUNLEC | Monitor de Informática</li>
-              <li>2024 - Via Certa | Instrutor de Informática</li>
-            </ul>
-          </CardContent>
-        </Card>
+    <section class="card">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>Hardware e manutenção</li>
+        <li>Redes e infraestrutura</li>
+        <li>Arduino e robótica</li>
+        <li>Python básico</li>
+        <li>Pacote Office</li>
+        <li>Atendimento e vendas</li>
+      </ul>
+    </section>
 
-        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2"><GraduationCap /> Formação</h3>
-            <ul className="space-y-4 text-zinc-300">
-              <li>Técnico em Eletrotécnica - IFMS</li>
-              <li>Matemática - UFMS</li>
-              <li>Cursos em Python, Power BI, Hardware e Software</li>
-            </ul>
-          </CardContent>
-        </Card>
-      </section>
-
-      <section className="px-8 md:px-20 pb-20 max-w-6xl mx-auto">
-        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2"><Cpu /> Habilidades</h3>
-            <div className="grid md:grid-cols-3 gap-4 text-zinc-300">
-              <div>Hardware & Manutenção</div>
-              <div>Redes e Infraestrutura</div>
-              <div>Arduino & Robótica</div>
-              <div>Python Básico</div>
-              <div>Pacote Office</div>
-              <div>Atendimento e Vendas</div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-      <footer className="border-t border-purple-900/30 px-8 md:px-20 py-10">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4 text-zinc-400">
-          <div>
-            <p className="flex items-center gap-2"><Mail size={16}/> pedro.felipe6501@gmail.com</p>
-            <p className="flex items-center gap-2 mt-2"><Phone size={16}/> (67) 98421-8627</p>
-          </div>
-          <div>
-            <p className="flex items-center gap-2"><Github size={16}/> github.com/pedrofelipe6501-del</p>
-            <p className="mt-2">linkedin.com/in/pedro-felipe-0008a6277</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-}
+    <section class="card links">
+      <h2>Contato</h2>
+      <a href="mailto:pedro.felipe6501@gmail.com">pedro.felipe6501@gmail.com</a>
+      <a href="https://github.com/pedrofelipe6501-del" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/pedro-felipe-0008a6277/" target="_blank">LinkedIn</a>
+    </section>
+  </div>
+</body>
+</html>
