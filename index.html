@@ -1,116 +1,92 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Pedro Felipe | Portfólio Tech & Educação</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',sans-serif;background:#0f0a1f;color:#eef2ff;line-height:1.5;scroll-behavior:smooth}
-    header{text-align:center;padding:80px 20px 70px;background:radial-gradient(ellipse at 70% 30%,#1a103d,#0f0a1f);border-bottom:1px solid rgba(168,85,247,.2)}
-    .badge-tech{display:inline-block;background:rgba(168,85,247,.12);padding:6px 14px;border-radius:40px;font-size:.8rem;margin-bottom:24px;border:1px solid rgba(168,85,247,.3);color:#c084fc}
-    h1{font-size:3.2rem;font-weight:700;background:linear-gradient(135deg,#fff,#c084fc,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px}
-    .headline{font-size:1.2rem;color:#d8b4fe;margin-bottom:16px}
-    .sub-headline{max-width:680px;margin:0 auto;color:#cbd5e1}
-    .container{max-width:1100px;margin:0 auto;padding:20px 24px 50px}
-    section{background:rgba(26,16,61,.75);border:1px solid rgba(168,85,247,.15);margin:48px 0;padding:28px 32px;border-radius:28px;box-shadow:0 12px 20px -12px rgba(0,0,0,.4);transition:.25s}
-    section:hover{transform:translateY(-5px);border-color:rgba(168,85,247,.5)}
-    h3{font-size:1.6rem;margin-bottom:20px;color:#f5f3ff;border-left:4px solid #a855f7;padding-left:18px}
-    ul{list-style:none}
-    li{margin-bottom:16px;padding-left:24px;position:relative}
-    li::before{content:'▹';position:absolute;left:0;color:#a855f7}
-    strong{color:#c084fc}
-    .contact-list{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px;justify-content:center}
-    .contact-card{background:#1a103d;padding:12px 20px;border-radius:48px;display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid #3b2169}
-    .contact-card a{text-decoration:none;color:#eef2ff}
-    .contact-card:hover{border-color:#a855f7}
-    .download-btn{display:inline-block;margin-top:18px;padding:12px 20px;background:#a855f7;color:white;text-decoration:none;border-radius:12px;font-weight:600}
-    footer{text-align:center;padding:40px 20px;border-top:1px solid rgba(168,85,247,.2);background:#070b14;font-size:.85rem;color:#a1a1aa}
-    .back-to-top{position:fixed;bottom:30px;right:30px;background:#1a103d;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c084fc;cursor:pointer}
-    @media(max-width:720px){h1{font-size:2.2rem}.container{padding:16px}.contact-list{flex-direction:column}}
-  </style>
-</head>
-<body>
-<header>
-  <div class="badge-tech"><i class="fas fa-microchip"></i> Tecnologia & Educação</div>
-  <h1>Pedro Felipe</h1>
-  <div class="headline"><i class="fas fa-laptop-code"></i> Instrutor de Informática | Suporte Técnico | EdTech</div>
-  <p class="sub-headline">Profissional em crescimento na área de tecnologia, com experiência em suporte técnico, manutenção, ensino e atendimento consultivo.</p>
-</header>
-<div class="container">
-  <section>
-    <h3>Sobre Mim</h3>
-    <p>Sou apaixonado por tecnologia e educação, atuando com suporte técnico, manutenção de computadores, programação criativa e robótica educacional.</p>
-  </section>
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github, Mail, Phone, Briefcase, GraduationCap, Cpu } from "lucide-react";
 
-  <section>
-    <h3>Formação</h3>
-    <ul>
-      <li>Ensino Médio Completo – ENCCEJA</li>
-      <li>Técnico em Eletrotécnica – IFMS</li>
-      <li>Matemática (incompleto) – UFMS</li>
-    </ul>
-  </section>
+export default function PortfolioPedro() {
+  return (
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(139,92,246,0.18),transparent_35%)]" />
 
-  <section>
-    <h3>Certificações</h3>
-    <ul>
-      <li>Arduino – IFMS</li>
-      <li>Robótica – IFMS</li>
-      <li>Python Básico – Fundação Bradesco</li>
-      <li>Fundamentos de TI: Hardware e Software</li>
-      <li>Power BI</li>
-      <li>Pacote Office</li>
-    </ul>
-  </section>
+      <section className="relative px-8 md:px-20 py-24 border-b border-purple-900/30">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto"
+        >
+          <p className="text-purple-400 uppercase tracking-[0.3em] text-sm mb-4">Portfolio Profissional</p>
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            Pedro Felipe
+          </h1>
+          <h2 className="text-xl md:text-2xl text-zinc-300 mt-4">
+            Tecnologia • Suporte Técnico • Infraestrutura • Desenvolvimento
+          </h2>
+          <p className="mt-8 text-zinc-400 text-lg max-w-3xl leading-8">
+            Olá, meu nome é Pedro Felipe e sou apaixonado por tecnologia, inovação e aprendizado constante.
+            Minha trajetória profissional é construída com base em dedicação, responsabilidade e interesse em evoluir cada vez mais dentro da área de tecnologia da informação.
+          </p>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Button className="bg-purple-600 hover:bg-purple-700 rounded-2xl">Entrar em contato</Button>
+            <Button variant="outline" className="rounded-2xl border-purple-500 text-purple-300">Baixar currículo</Button>
+          </div>
+        </motion.div>
+      </section>
 
-  <section>
-    <h3>Competências</h3>
-    <ul>
-      <li>Comunicação e didática</li>
-      <li>Resolução de problemas</li>
-      <li>Trabalho em equipe</li>
-      <li>Aprendizado contínuo</li>
-    </ul>
-  </section>
+      <section className="px-8 md:px-20 py-20 max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2"><Briefcase /> Experiência</h3>
+            <ul className="space-y-4 text-zinc-300">
+              <li>2026 - Global Informática | Consultor Comercial</li>
+              <li>2025 - Missão Salesiana | Instrutor</li>
+              <li>2024 - FUNLEC | Monitor de Informática</li>
+              <li>2024 - Via Certa | Instrutor de Informática</li>
+            </ul>
+          </CardContent>
+        </Card>
 
-  <section>
-    <h3>Experiência Profissional</h3>
-    <ul>
-      <li><strong>Global Informática</strong> – Consultor Comercial (2026)</li>
-      <li><strong>Missão Salesiana</strong> – Instrutor de Tecnologia (2025)</li>
-      <li><strong>FUNLEC</strong> – Monitor de Informática (2024)</li>
-      <li><strong>Via Certa</strong> – Instrutor de Informática (2024)</li>
-    </ul>
-  </section>
+        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2"><GraduationCap /> Formação</h3>
+            <ul className="space-y-4 text-zinc-300">
+              <li>Técnico em Eletrotécnica - IFMS</li>
+              <li>Matemática - UFMS</li>
+              <li>Cursos em Python, Power BI, Hardware e Software</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </section>
 
-  <section>
-    <h3>Projetos em Destaque</h3>
-    <ul>
-      <li><strong>Fliperama Retrô</strong> com Arduino e Raspberry Pi</li>
-      <li><strong>Filtro de Rede com OpenDNS</strong></li>
-      <li><strong>Manutenção e Instalação de Sistemas</strong></li>
-    </ul>
-  </section>
+      <section className="px-8 md:px-20 pb-20 max-w-6xl mx-auto">
+        <Card className="bg-zinc-950 border-purple-900/40 rounded-3xl shadow-xl">
+          <CardContent className="p-8">
+            <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2"><Cpu /> Habilidades</h3>
+            <div className="grid md:grid-cols-3 gap-4 text-zinc-300">
+              <div>Hardware & Manutenção</div>
+              <div>Redes e Infraestrutura</div>
+              <div>Arduino & Robótica</div>
+              <div>Python Básico</div>
+              <div>Pacote Office</div>
+              <div>Atendimento e Vendas</div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
 
-  <section>
-    <h3>Contato</h3>
-    <div class="contact-list">
-      <div class="contact-card"><i class="fas fa-envelope"></i><a href="mailto:pedro.felipe6501@gmail.com">Email</a></div>
-      <div class="contact-card"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/pedro-felipe-0008a6277/" target="_blank">LinkedIn</a></div>
-      <div class="contact-card"><i class="fab fa-github"></i><a href="https://github.com/pedrofelipe6501-del" target="_blank">GitHub</a></div>
+      <footer className="border-t border-purple-900/30 px-8 md:px-20 py-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4 text-zinc-400">
+          <div>
+            <p className="flex items-center gap-2"><Mail size={16}/> pedro.felipe6501@gmail.com</p>
+            <p className="flex items-center gap-2 mt-2"><Phone size={16}/> (67) 98421-8627</p>
+          </div>
+          <div>
+            <p className="flex items-center gap-2"><Github size={16}/> github.com/pedrofelipe6501-del</p>
+            <p className="mt-2">linkedin.com/in/pedro-felipe-0008a6277</p>
+          </div>
+        </div>
+      </footer>
     </div>
-    <a class="download-btn" href="curriculo.pdf" download>Baixar Currículo</a>
-  </section>
-</div>
-<footer>© 2026 Pedro Felipe — Portfólio Profissional</footer>
-<div class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></div>
-</body>
-</html>
-
-
-
+  );
+}
