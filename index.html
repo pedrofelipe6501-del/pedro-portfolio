@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pedro Felipe | Portfólio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-    body { background: #050505; color: white; }
-    .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-    header { padding: 100px 0; }
-    h1 { font-size: 4rem; color: white; }
+    body {
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(168,85,247,0.18), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(168,85,247,0.12), transparent 20%),
+        linear-gradient(135deg, #050505 0%, #0b0114 100%);
+    }
+    .container { max-width: 1200px; margin: auto; padding: 40px 20px; position: relative; z-index: 2; }
+    body::before {
+      content: '';
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      background: rgba(168,85,247,0.08);
+      border-radius: 50%;
+      filter: blur(120px);
+      top: -100px;
+      right: -100px;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(168,85,247,0.2);
+      transform: rotate(45deg);
+      bottom: 80px;
+      left: -150px;
+      z-index: 0;
+    }
+    header { padding: 100px 0; animation: fadeUp 1s ease; }
+    h1 { font-size: 5rem; color: white; text-shadow: 0 0 20px rgba(255,255,255,0.08); }
     h2 { color: #a855f7; margin-top: 10px; }
-    p { color: #cfcfcf; line-height: 1.7; margin-top: 20px; }
+    p { color: #cfcfcf; line-height: 1.8; margin-top: 20px; max-width: 900px; }
     .card {
-      background: #111;
+      background: rgba(17,17,17,0.75);
+      backdrop-filter: blur(8px);
       border: 1px solid #6b21a8;
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 30px;
       margin-top: 30px;
-      box-shadow: 0 0 20px rgba(168,85,247,0.1);
+      box-shadow: 0 0 30px rgba(168,85,247,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 35px rgba(168,85,247,0.25);
     }
     ul { margin-top: 15px; padding-left: 20px; }
     li { margin-bottom: 10px; color: #ddd; }
-    .links a {
+    .links {
+      text-align: center;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 25px;
+      font-size: 2.2rem;
+    }
+    .social-icons a {
       color: #c084fc;
       text-decoration: none;
-      display: block;
-      margin-top: 10px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: white;
+      transform: scale(1.15);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -74,11 +129,27 @@
       </ul>
     </section>
 
+    <section class="card">
+      <h2>Cursos e Certificações</h2>
+      <ul>
+        <li>Arduino (Programação) - IFMS</li>
+        <li>Robótica - IFMS</li>
+        <li>Pacote Office 2016 - Fundação Bradesco</li>
+        <li>Fundamentos de TI: Hardware e Software - Fundação Bradesco</li>
+        <li>Primeiros Passos em Tecnologia - Fundação Bradesco</li>
+        <li>Fundamentos do Power BI - Fundação Bradesco</li>
+        <li>Linguagem de Programação Python Básico - Fundação Bradesco</li>
+        <li>Editor de Vídeo Profissional - Via Certa</li>
+      </ul>
+    </section>
+
     <section class="card links">
       <h2>Contato</h2>
-      <a href="mailto:pedro.felipe6501@gmail.com">pedro.felipe6501@gmail.com</a>
-      <a href="https://github.com/pedrofelipe6501-del" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/pedro-felipe-0008a6277/" target="_blank">LinkedIn</a>
+      <div class="social-icons">
+        <a href="mailto:pedro.felipe6501@gmail.com" title="Gmail"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/pedrofelipe6501-del" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/pedro-felipe-0008a6277/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </section>
   </div>
 </body>
